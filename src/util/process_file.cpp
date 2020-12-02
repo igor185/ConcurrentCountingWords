@@ -8,7 +8,7 @@
 
 namespace ba = boost::locale::boundary;
 
-#include "util.h"
+#include "../util.h"
 
 bool is_alpha(char c) {
     return isalpha(c) != 0;

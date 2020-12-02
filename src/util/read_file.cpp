@@ -8,7 +8,7 @@
 #include <archive_entry.h>
 #include <sstream>
 
-#include "util.h"
+#include "../util.h"
 
 std::string get_file_ext(const std::string &file_name) {
     std::vector<std::string> file_and_ext;
@@ -18,8 +18,7 @@ std::string get_file_ext(const std::string &file_name) {
 }
 
 
-std::vector<std::string> read_file(const std::string &file_name, long& time_read) {
-    auto start_reading = get_current_time_fenced();
+std::vector<std::string> read_file(const std::string &file_name) {
     std::vector<std::string> res;
 
     std::string extension = get_file_ext(file_name);
@@ -54,10 +53,5 @@ std::vector<std::string> read_file(const std::string &file_name, long& time_read
     } else {
         return res;
     }
-
-    auto end_reading = get_current_time_fenced();
-
-    time_read += std::chrono::duration_cast<std::chrono::nanoseconds>(end_reading - start_reading).count();
-
     return res;
 }

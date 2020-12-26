@@ -1,1 +1,1 @@
-- Single thread implantation `single-thread` branch (first lab)
+- Single thread implementation `single-thread` branch (first lab)
